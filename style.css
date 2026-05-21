@@ -3080,4 +3080,138 @@ a.info-val:hover {
     .sandbox-modal-title {
         font-size: 1rem;
     }
+
+    /* Core UI Elements Mobile Overrides */
+    .fhe-card {
+        padding: 16px !important;
+    }
+    .fhe-subtitle {
+        font-size: 1.1rem !important;
+    }
+    .paragraph {
+        font-size: 0.85rem !important;
+    }
+
+    /* FHE Network SVG Space Scaling */
+    .fhe-network-space {
+        height: 185px !important;
+    }
+
+    /* API Vulnerability Pentesting Simulator Mobile Refinements */
+    .api-address-bar {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 8px !important;
+        padding: 12px 14px !important;
+    }
+    .api-method-badge {
+        align-self: flex-start !important;
+        font-size: 0.75rem !important;
+        padding: 4px 10px !important;
+    }
+    .api-url-input {
+        width: 100% !important;
+        font-size: 0.75rem !important;
+        padding: 6px 10px !important;
+    }
+    #api-send-btn {
+        width: 100% !important;
+        padding: 8px 12px !important;
+        font-size: 0.8rem !important;
+        justify-content: center;
+        display: flex;
+    }
+    .api-alert-banner {
+        padding: 10px 12px !important;
+        font-size: 0.78rem !important;
+        gap: 8px !important;
+    }
+    .api-sub-panel {
+        padding: 12px !important;
+        height: auto !important;
+        min-height: 200px !important;
+    }
+    .api-json-editor {
+        height: 160px !important;
+    }
+    .api-mitigation-controls {
+        padding: 16px !important;
+        gap: 12px !important;
+    }
+    .api-mitigation-header {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+    }
+    #api-mitigate-btn {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 10px !important;
+    }
+    
+    /* SSL/TLS 1.3 Cryptographic Handshake Visualizer Mobile Overrides */
+    .tls-diagram-container {
+        padding: 20px 15px !important;
+        min-height: 360px !important;
+    }
+    .tls-steps-visual {
+        left: 55px !important;
+        right: 55px !important;
+    }
+    .tls-step-line {
+        padding: 4px 8px !important;
+        font-size: 0.62rem !important;
+        line-height: 1.2 !important;
+        white-space: normal !important;
+        text-align: center !important;
+    }
+    .tls-detail-text {
+        display: none !important;
+    }
+    .tls-node span {
+        font-size: 0.7rem !important;
+    }
+    
+    /* Responsive styling for SVG lines inside TLS diagram */
+    .tls-diagram-container svg line.tls-line-client {
+        x1: 40px !important;
+        x2: 40px !important;
+    }
+    .tls-diagram-container svg line.tls-line-server {
+        transform: translate(-40px, 0) !important;
+    }
+
+    /* FHE Metric Badge alignments */
+    .fhe-metric-badge {
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+        padding: 8px 12px !important;
+    }
+    .fhe-metric-badge-label, .fhe-metric-badge-val {
+        font-size: 0.75rem !important;
+    }
+
+    /* Capture The Flag Badge Modal Responsiveness */
+    .ctf-modal-card {
+        padding: 24px 16px !important;
+        width: 92% !important;
+    }
+    .ctf-modal-title {
+        font-size: 1.35rem !important;
+        text-align: center !important;
+    }
+    .ctf-badge-ring {
+        width: 80px !important;
+        height: 80px !important;
+        margin-bottom: 16px !important;
+    }
+    .ctf-badge-icon {
+        width: 36px !important;
+        height: 36px !important;
+    }
+    .ctf-modal-desc {
+        font-size: 0.85rem !important;
+        text-align: center !important;
+        margin-bottom: 20px !important;
+    }
 }

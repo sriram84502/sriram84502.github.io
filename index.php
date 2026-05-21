@@ -914,8 +914,8 @@ if (empty($_SESSION['csrf_token'])) {
                                 <!-- Connection Pipeline Path / SVG overlay -->
                                 <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;">
                                     <!-- Flow lines -->
-                                    <line x1="65" y1="45" x2="65" y2="320" stroke="rgba(255,255,255,0.1)" stroke-dasharray="4" stroke-width="1.5" />
-                                    <line x1="100%" y1="45" x2="100%" y2="320" transform="translate(-65, 0)" stroke="rgba(255,255,255,0.1)" stroke-dasharray="4" stroke-width="1.5" />
+                                    <line class="tls-line-client" x1="65" y1="45" x2="65" y2="320" stroke="rgba(255,255,255,0.1)" stroke-dasharray="4" stroke-width="1.5" />
+                                    <line class="tls-line-server" x1="100%" y1="45" x2="100%" y2="320" transform="translate(-65, 0)" stroke="rgba(255,255,255,0.1)" stroke-dasharray="4" stroke-width="1.5" />
                                     
                                     <!-- Dynamic Packet Flow lines (1 to 4) -->
                                     <g id="tls-flow-lines"></g>
@@ -924,16 +924,16 @@ if (empty($_SESSION['csrf_token'])) {
                                 <!-- Step Messages Stack (Horizontal lines) -->
                                 <div class="tls-steps-visual" style="position: absolute; left: 80px; right: 80px; top: 130px; bottom: 15px; display: flex; flex-direction: column; justify-content: space-around; pointer-events: none;">
                                     <div class="tls-step-line" id="tls-step-1" style="display: flex; justify-content: flex-start; align-items: center; padding: 6px 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); transition: all 0.3s; opacity: 0.4;">
-                                        <span style="font-weight: bold; color: var(--accent); margin-right: 8px;">1. ClientHello</span> (Key Share: g^x mod p) ➔
+                                        <span style="font-weight: bold; color: var(--accent); margin-right: 8px;">1. ClientHello</span><span class="tls-detail-text"> (Key Share: g^x mod p)</span> ➔
                                     </div>
                                     <div class="tls-step-line" id="tls-step-2" style="display: flex; justify-content: flex-end; align-items: center; padding: 6px 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); transition: all 0.3s; opacity: 0.4;">
-                                        ⮨ <span style="font-weight: bold; color: var(--primary); margin-left: 8px;">2. ServerHello + Cert</span> (Key Share: g^y mod p)
+                                        ⮨ <span style="font-weight: bold; color: var(--primary); margin-left: 8px;">2. ServerHello + Cert</span><span class="tls-detail-text"> (Key Share: g^y mod p)</span>
                                     </div>
                                     <div class="tls-step-line" id="tls-step-3" style="display: flex; justify-content: center; align-items: center; padding: 6px 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); transition: all 0.3s; opacity: 0.4; text-align: center;">
-                                        ⚡ <span style="font-weight: bold; color: #10b981; margin: 0 6px;">3. Cryptographic Derivation</span> (DH Secret: g^xy mod p) ⚡
+                                        ⚡ <span style="font-weight: bold; color: #10b981; margin: 0 6px;">3. Cryptographic Derivation</span><span class="tls-detail-text"> (DH Secret: g^xy mod p)</span> ⚡
                                     </div>
                                     <div class="tls-step-line" id="tls-step-4" style="display: flex; justify-content: space-between; align-items: center; padding: 6px 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); transition: all 0.3s; opacity: 0.4;">
-                                        🔒 <span>4. Finished & Encrypted Symmetrical Session Active</span> 🔒
+                                        🔒 <span>4. <span class="tls-detail-text">Finished & Encrypted </span>Symmetrical Session Active</span> 🔒
                                     </div>
                                 </div>
                                 

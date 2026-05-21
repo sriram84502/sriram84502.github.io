@@ -2214,8 +2214,12 @@ function spawnTlsPacket(direction, label, color) {
     packet.style.boxShadow = '0 0 10px rgba(255,255,255,0.2)';
     packet.style.transition = 'all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
     
-    const startLeft = direction === 'client-to-server' ? '65px' : 'calc(100% - 65px - 100px)';
-    const endLeft = direction === 'client-to-server' ? 'calc(100% - 65px - 100px)' : '65px';
+    const isMobile = window.innerWidth <= 768;
+    const lineOffset = isMobile ? 40 : 65;
+    const packetWidth = 100;
+    
+    const startLeft = direction === 'client-to-server' ? `${lineOffset}px` : `calc(100% - ${lineOffset}px - ${packetWidth}px)`;
+    const endLeft = direction === 'client-to-server' ? `calc(100% - ${lineOffset}px - ${packetWidth}px)` : `${lineOffset}px`;
     
     packet.style.left = startLeft;
     packet.style.opacity = '0';
