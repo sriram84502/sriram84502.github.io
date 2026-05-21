@@ -2893,28 +2893,20 @@ a.info-val:hover {
     box-shadow: 0 12px 40px rgba(var(--accent-raw), 0.15);
 }
 
-/* -------------------------------------------------------------
-   MOBILE OPTIMIZATION: ONLY KEEP TERMINAL CONSOLE & CTF
-   ------------------------------------------------------------- */
+/* Hide the tab selector container globally (since we are driving via terminal commands) */
+.playground-tabs-container {
+    display: none !important;
+}
+
+/* Hide the interactive sandboxes by default in the normal flow */
+#fhe-sandbox,
+#api-sandbox,
+#tls-sandbox {
+    display: none !important;
+}
+
+/* Optimize the Terminal layout for mobile/tablet screens */
 @media (max-width: 992px) {
-    /* Hide the tab selector buttons since only one sandbox remains */
-    .playground-tabs-container {
-        display: none !important;
-    }
-
-    /* Hide the other three panels on mobile/tablets */
-    #fhe-sandbox,
-    #api-sandbox,
-    #tls-sandbox {
-        display: none !important;
-    }
-
-    /* Force the Terminal Sandbox panel to be active and visible */
-    #terminal-sandbox {
-        display: block !important;
-    }
-
-    /* Optimize the Terminal layout for smaller screens */
     .terminal-window {
         max-width: 100% !important;
         margin: 0 !important;
@@ -2932,5 +2924,160 @@ a.info-val:hover {
 
     .console-input-row {
         gap: 4px !important;
+    }
+}
+
+/* =============================================================
+   GLASSMORPHIC INTERACTIVE SANDBOX MODAL
+   ============================================================= */
+.sandbox-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(3, 7, 18, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.sandbox-modal-overlay.active {
+    display: flex;
+}
+
+.sandbox-modal-window {
+    background-color: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-xl);
+    width: 100%;
+    max-width: 1200px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px rgba(var(--primary-raw), 0.1);
+    transform: scale(0.95);
+    opacity: 0;
+    animation: modalScaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.05s;
+}
+
+.sandbox-modal-overlay.active .sandbox-modal-window {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.sandbox-modal-header {
+    padding: 18px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(15, 23, 42, 0.95);
+}
+
+.sandbox-modal-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sandbox-modal-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #10b981;
+    box-shadow: 0 0 10px #10b981;
+    animation: modalPulse 2s infinite ease-in-out;
+}
+
+.sandbox-modal-title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+.sandbox-modal-close {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-light);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    line-height: 1;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sandbox-modal-close:hover {
+    background-color: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.4);
+    color: #ef4444;
+    transform: rotate(90deg);
+}
+
+.sandbox-modal-body {
+    padding: 30px;
+    overflow-y: auto;
+    flex: 1;
+    background-color: rgba(10, 15, 30, 0.4);
+}
+
+/* Specificity overrides to show sandboxes inside active modal */
+.sandbox-modal-body #fhe-sandbox.active,
+.sandbox-modal-body #api-sandbox.active,
+.sandbox-modal-body #tls-sandbox.active {
+    display: block !important;
+}
+
+/* Animations */
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes modalScaleIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes modalPulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+/* Mobile responsive fixes for modal */
+@media (max-width: 768px) {
+    .sandbox-modal-overlay {
+        padding: 10px;
+    }
+    
+    .sandbox-modal-window {
+        max-height: 95vh;
+        border-radius: var(--radius-lg);
+    }
+    
+    .sandbox-modal-header {
+        padding: 14px 18px;
+    }
+    
+    .sandbox-modal-body {
+        padding: 16px;
+    }
+    
+    .sandbox-modal-title {
+        font-size: 1rem;
     }
 }

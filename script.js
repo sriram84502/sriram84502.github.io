@@ -361,6 +361,9 @@ Available system commands:
   <span class="text-accent">skills</span>        - Print core full-stack & cybersecurity skillset
   <span class="text-accent">projects</span>      - List completed freelance and commercial projects
   <span class="text-accent">publications</span>  - View scientific research papers and EV Battery work
+  <span class="text-accent">api</span>           - Launch 🕷️ API Pentest Simulator sandbox
+  <span class="text-accent">tls</span>           - Launch 🛡️ SSL/TLS 1.3 Handshake sandbox
+  <span class="text-accent">fhe</span>           - Launch 🔐 FHE CKKS Sandbox
   <span class="text-accent">scan</span>          - Simulate a multi-phase penetration security check
   <span class="text-accent">ctf</span>           - Check the active CTF Security Easter Egg & badges state
   <span class="text-accent">achievements</span>  - Show unlocked CTF badges double-lined table
@@ -449,6 +452,15 @@ consoleInput.addEventListener('keydown', (e) => {
             runInspectDiagnostics();
         } else if (cmd === 'hack --buffer-overflow') {
             runBufferOverflowExploit();
+        } else if (cmd === 'api' || cmd === 'pentest') {
+            printLine('<span class="text-success">[OK]</span> Initializing 🕷️ API Pentest Simulator sandbox modal...');
+            openSandboxModal('api-sandbox', '🕷️ API Pentest Simulator');
+        } else if (cmd === 'tls' || cmd === 'handshake') {
+            printLine('<span class="text-success">[OK]</span> Initializing 🛡️ SSL/TLS 1.3 Handshake sandbox modal...');
+            openSandboxModal('tls-sandbox', '🛡️ SSL/TLS 1.3 Handshake');
+        } else if (cmd === 'fhe' || cmd === 'ckks') {
+            printLine('<span class="text-success">[OK]</span> Initializing 🔐 FHE CKKS Sandbox modal...');
+            openSandboxModal('fhe-sandbox', '🔐 FHE CKKS Sandbox');
         } else if (cmd.startsWith('submit ')) {
             const flagInput = inputRaw.substring(7).trim();
             verifySubmittedFlag(flagInput);
@@ -935,8 +947,99 @@ const ragDocuments = [
     }
 ];
 
+/* -------------------------------------------------------------
+   GLASSMORPHIC INTERACTIVE SANDBOX MODAL UTILITIES
+   ------------------------------------------------------------- */
+function openSandboxModal(sandboxId, titleText) {
+    const modal = document.getElementById('sandbox-modal');
+    const modalTitle = document.getElementById('sandbox-modal-title');
+    const panels = document.querySelectorAll('.sandbox-modal-body .sandbox-panel');
+    
+    if (!modal) return;
+    
+    // Set title
+    if (modalTitle) {
+        modalTitle.innerHTML = titleText;
+    }
+    
+    // Set active sandbox panel inside the modal
+    panels.forEach(panel => {
+        if (panel.id === sandboxId) {
+            panel.classList.add('active');
+        } else {
+            panel.classList.remove('active');
+        }
+    });
+    
+    // Open modal
+    modal.classList.add('active');
+    
+    // Dispatch resize event to trigger layout calculations for canvas/chart dimensions
+    setTimeout(() => {
+        window.dispatchEvent(new Event('resize'));
+    }, 50);
+}
+
+function closeSandboxModal() {
+    const modal = document.getElementById('sandbox-modal');
+    const panels = document.querySelectorAll('.sandbox-modal-body .sandbox-panel');
+    
+    if (!modal) return;
+    
+    // Check if tls-sandbox was active to clear running intervals/autoplay
+    const tlsPanel = document.getElementById('tls-sandbox');
+    if (tlsPanel && tlsPanel.classList.contains('active')) {
+        if (typeof clearTlsAutoPlay === 'function') clearTlsAutoPlay();
+        if (typeof tlsEncryptedFlowInterval !== 'undefined' && tlsEncryptedFlowInterval) {
+            clearInterval(tlsEncryptedFlowInterval);
+            tlsEncryptedFlowInterval = null;
+        }
+    }
+    
+    // Close modal
+    modal.classList.remove('active');
+    
+    // Remove active from panels
+    panels.forEach(panel => {
+        panel.classList.remove('active');
+    });
+    
+    // Restore focus to terminal prompt
+    const consoleInput = document.getElementById('console-input-field');
+    if (consoleInput) {
+        consoleInput.focus();
+    }
+}
+
 // Initialize wiring when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Sandbox Modal close handlers
+    const closeBtn = document.getElementById('sandbox-modal-close-btn');
+    const modalOverlay = document.getElementById('sandbox-modal');
+    
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeSandboxModal);
+    }
+    
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', (e) => {
+            // Close only if click is directly on the backdrop, not inside the modal window
+            if (e.target === modalOverlay) {
+                closeSandboxModal();
+            }
+        });
+    }
+    
+    // ESC key close support
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const modal = document.getElementById('sandbox-modal');
+            if (modal && modal.classList.contains('active')) {
+                closeSandboxModal();
+            }
+        }
+    });
+
     // 1. PLAYGROUND HUB TABS SWITCHING
     const playTabs = document.querySelectorAll('.playground-tab');
     const sandboxPanels = document.querySelectorAll('.sandbox-panel');
