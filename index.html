@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sai Sriram Vanapalli - Cybersecurity Analyst & AI Full Stack Developer Portfolio. Specializing in Web Application Security, MERN Stack, and Applied Machine Learning.">
+    <title>Sai Sriram Vanapalli | Security Analyst & AI Full Stack Developer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!--
+      SECRET CTF AUDIT: Looking for anomalies?
+      There seems to be an exposed admin console at '/admin.php'.
+      But wait, maybe there's a terminal vulnerability you can exploit inside the console instead!
+      Try running the command 'inspect' or 'ctf' inside the Sandbox Console section.
+    -->
+</head>
+<body>
+
+    <!-- Hero Interactive Canvas background -->
+    <canvas id="hero-canvas"></canvas>
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="#" class="navbar__logo">
+                <span class="logo-accent">&lt;</span>Sriram<span class="logo-accent">.dev /&gt;</span>
+            </a>
+            
+            <ul class="navbar__menu">
+                <li><a href="#about" class="navbar__link">About</a></li>
+                <li><a href="#skills" class="navbar__link">Skills</a></li>
+                <li><a href="#experience" class="navbar__link">Experience</a></li>
+                <li><a href="#projects" class="navbar__link">Projects</a></li>
+                <li><a href="#terminal" class="navbar__link navbar__link--terminal">Console</a></li>
+                <li><a href="#publications" class="navbar__link">Research</a></li>
+                <li><a href="#contact" class="navbar__link navbar__link--btn">Get In Touch</a></li>
+            </ul>
+
+            <div class="navbar__actions">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle visual theme">
+                    <i data-lucide="shield" class="theme-icon-dark"></i>
+                    <i data-lucide="sun" class="theme-icon-light"></i>
+                </button>
+                <button class="mobile-toggle-btn" aria-label="Toggle navigation menu">
+                    <i data-lucide="menu" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer">
+        <ul class="mobile-drawer__menu">
+            <li><a href="#about" class="mobile-drawer__link">About</a></li>
+            <li><a href="#skills" class="mobile-drawer__link">Skills</a></li>
+            <li><a href="#experience" class="mobile-drawer__link">Experience</a></li>
+            <li><a href="#projects" class="mobile-drawer__link">Projects</a></li>
+            <li><a href="#terminal" class="mobile-drawer__link">Console</a></li>
+            <li><a href="#publications" class="mobile-drawer__link">Research</a></li>
+            <li><a href="#contact" class="mobile-drawer__link mobile-drawer__link--btn">Get In Touch</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Container -->
+    <main class="content-wrapper">
+
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="hero-container">
+                <div class="hero-grid">
+                    <div class="hero-text-col">
+                        <div class="hero-badge">
+                            <span class="badge-dot"></span>
+                            <span class="badge-text">Available for Freelance & Collaborative Roles</span>
+                        </div>
+                        <h1 class="hero-title">
+                            Hi, I am <span class="gradient-text">Sai Sriram</span>
+                        </h1>
+                        <h2 class="hero-subtitle">
+                            I am a <span class="typing-text" id="typed-output">Cybersecurity Analyst</span><span class="typed-cursor">|</span>
+                        </h2>
+                        <p class="hero-description">
+                            A results-driven Computer Science graduate and Security Analyst at Tata Consultancy Services (TCS). I specialize in securing web/API architectures while building intelligent MERN-stack and AI-driven applications.
+                        </p>
+                        
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn btn--primary">
+                                <span>View Work</span>
+                                <i data-lucide="arrow-right"></i>
+                            </a>
+                            <a href="#terminal" class="btn btn--secondary">
+                                <i data-lucide="terminal"></i>
+                                <span>Run Security Scan</span>
+                            </a>
+                        </div>
+
+                        <div class="hero-socials">
+                            <a href="https://github.com/sriram84502" target="_blank" rel="noopener noreferrer" class="social-icon" title="GitHub">
+                                <i data-lucide="github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/sriram-vanapalli-020a462b4/" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn">
+                                <i data-lucide="linkedin"></i>
+                            </a>
+                            <a href="https://scholar.google.com/user=cZuM70IAAAAJ&hl=en&authuser=3" target="_blank" rel="noopener noreferrer" class="social-icon" title="Google Scholar">
+                                <i data-lucide="graduation-cap"></i>
+                            </a>
+                            <a href="mailto:vanapallisaisriram7@gmail.com" class="social-icon" title="Email">
+                                <i data-lucide="mail"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Cyber Visual Widget -->
+                    <div class="hero-visual-col">
+                        <div class="cyber-shield-widget">
+                            <div class="pulse-ring"></div>
+                            <div class="pulse-ring pulse-ring--delayed"></div>
+                            <div class="cyber-shield-core">
+                                <i data-lucide="shield-check" class="shield-main-icon"></i>
+                                <div class="shield-scanning-bar"></div>
+                            </div>
+                            <div class="widget-metric widget-metric--top-left">
+                                <span class="metric-label">API Pentested</span>
+                                <span class="metric-val">30+</span>
+                            </div>
+                            <div class="widget-metric widget-metric--bottom-right">
+                                <span class="metric-label">Research Papers</span>
+                                <span class="metric-val">4</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stats-container">
+                <div class="stats-grid">
+                    <div class="stat-card" data-glow>
+                        <h3 class="stat-number" data-target="1.8">1.8</h3>
+                        <p class="stat-label">Years of Experience at TCS</p>
+                    </div>
+                    <div class="stat-card" data-glow>
+                        <h3 class="stat-number" data-target="30">30+</h3>
+                        <p class="stat-label">Enterprise Applications Pentested</p>
+                    </div>
+                    <div class="stat-card" data-glow>
+                        <h3 class="stat-number" data-target="4">4</h3>
+                        <p class="stat-label">Scientific Publications Published</p>
+                    </div>
+                    <div class="stat-card" data-glow>
+                        <h3 class="stat-number" data-target="100">100%</h3>
+                        <p class="stat-label">OWASP Top 10 Mitigation Rate</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">Overview</span>
+                    <h2 class="section-title">About Me</h2>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p class="paragraph">
+                            I am Sai Sriram Vanapalli, currently working as a <strong>Security Analyst</strong> at <strong>Tata Consultancy Services (TCS)</strong> in Hyderabad. I hold a B.Tech degree in Computer Science and Engineering from Sri Vasavi Engineering College (class of 2024).
+                        </p>
+                        <p class="paragraph">
+                            My unique professional focus combines deep practical knowledge in <strong>web application/API penetration testing</strong> with full-stack development capability (specializing in the <strong>MERN stack</strong> and <strong>Django</strong>). 
+                        </p>
+                        <p class="paragraph">
+                            Driven by curiosity, I actively research the frontier of <strong>Privacy-Preserving Machine Learning</strong>. I've successfully published four scientific papers in recognized journals exploring EV Battery State-of-Health modeling utilizing **Fully Homomorphic Encryption (FHE)**.
+                        </p>
+                    </div>
+                    <div class="about-highlights-card" data-glow>
+                        <h3 class="card-subtitle">Fast Profile Highlights</h3>
+                        <ul class="highlights-list">
+                            <li>
+                                <i data-lucide="check-circle" class="highlight-icon text-success"></i>
+                                <span><strong>Enterprise Security Expertise:</strong> Vulnerability assessment, OWASP Top 10 / OWASP API Security.</span>
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle" class="highlight-icon text-accent"></i>
+                                <span><strong>Modern AI Implementations:</strong> RAG frameworks & Custom Hugging Face pipelines.</span>
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle" class="highlight-icon text-primary"></i>
+                                <span><strong>Clean Coder:</strong> Solid experience building secure e-commerce portals.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills-section" id="skills">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">Superpowers</span>
+                    <h2 class="section-title">Technical Expertise</h2>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Column 1: Cybersecurity -->
+                    <div class="skills-category-card" data-glow>
+                        <div class="card-header-with-icon">
+                            <i data-lucide="shield-alert" class="category-icon text-primary"></i>
+                            <h3 class="category-title">Cybersecurity</h3>
+                        </div>
+                        <ul class="skills-list-detailed">
+                            <li>Web Application Penetration Testing</li>
+                            <li>API Penetration Testing</li>
+                            <li>Vulnerability Assessment & Reporting</li>
+                            <li>OWASP Top 10 / OWASP API Top 10</li>
+                            <li>Burp Suite, OWASP ZAP & Wireshark</li>
+                            <li>Nuclei, Nexus & Source-Code Review</li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2: Full Stack Development -->
+                    <div class="skills-category-card" data-glow>
+                        <div class="card-header-with-icon">
+                            <i data-lucide="cpu" class="category-icon text-accent"></i>
+                            <h3 class="category-title">Full Stack Dev</h3>
+                        </div>
+                        <ul class="skills-list-detailed">
+                            <li><strong>Languages:</strong> Python, Java, JavaScript, Dart, SQL</li>
+                            <li><strong>Frontend:</strong> React.js, HTML5, CSS3, ES6</li>
+                            <li><strong>Backend:</strong> Node.js, Express.js, Django</li>
+                            <li><strong>Databases:</strong> MongoDB, Supabase, PostgreSQL</li>
+                            <li><strong>Mobile Development:</strong> Flutter</li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: AI & Research -->
+                    <div class="skills-category-card" data-glow>
+                        <div class="card-header-with-icon">
+                            <i data-lucide="brain-circuit" class="category-icon text-success"></i>
+                            <h3 class="category-title">AI & Applied Research</h3>
+                        </div>
+                        <ul class="skills-list-detailed">
+                            <li>Retrieval-Augmented Generation (RAG)</li>
+                            <li>Hugging Face APIs Integration</li>
+                            <li>AI Chatbots / Dynamic Recommendation</li>
+                            <li>Fully Homomorphic Encryption (FHE / CKKS)</li>
+                            <li>Privacy-Preserving Deep Neural Networks</li>
+                            <li>Ensemble Deep Learning Models (RVFLN)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline Section -->
+        <section class="experience-section" id="experience">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">Career History</span>
+                    <h2 class="section-title">Work Experience & Education</h2>
+                </div>
+
+                <div class="timeline">
+                    <!-- TCS Experience -->
+                    <div class="timeline-item timeline-item--work">
+                        <div class="timeline-dot">
+                            <i data-lucide="briefcase"></i>
+                        </div>
+                        <div class="timeline-content" data-glow>
+                            <span class="timeline-date">Aug 2024 - Present</span>
+                            <h3 class="timeline-role">Security Analyst</h3>
+                            <h4 class="timeline-company">Tata Consultancy Services (TCS)</h4>
+                            <p class="timeline-description">
+                                Conducting end-to-end web application and API penetration testing across 30+ client enterprise platforms (including Zebra, QIAGEN, Deposit Power, and Royal Sundaram). Mitigating crucial vulnerabilities, creating OpenAPI-to-Azure API Management automation configurations, and guiding developers in code remediation.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">Burp Suite</span>
+                                <span class="tag">OWASP Top 10</span>
+                                <span class="tag">API Testing</span>
+                                <span class="tag">Azure API Mgmt</span>
+                                <span class="tag">Vulnerability Scanning</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Freelance Developer -->
+                    <div class="timeline-item timeline-item--work">
+                        <div class="timeline-dot">
+                            <i data-lucide="code-2"></i>
+                        </div>
+                        <div class="timeline-content" data-glow>
+                            <span class="timeline-date">2023 - 2024</span>
+                            <h3 class="timeline-role">Freelance Full Stack & AI Developer</h3>
+                            <h4 class="timeline-company">E-commerce & AI Consultancy Ventures</h4>
+                            <p class="timeline-description">
+                                Designed and deployed highly successful full-stack e-commerce systems (*LiveGreen Honey*, *Manscara*) integrating Razorpay payments, logistics trackers, and AI chatbots with context-aware Hugging Face API pipelines and semantic search.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">MERN Stack</span>
+                                <span class="tag">Hugging Face API</span>
+                                <span class="tag">Razorpay</span>
+                                <span class="tag">RAG Chatbots</span>
+                                <span class="tag">Responsive UI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sri Vasavi College -->
+                    <div class="timeline-item timeline-item--edu">
+                        <div class="timeline-dot">
+                            <i data-lucide="graduation-cap"></i>
+                        </div>
+                        <div class="timeline-content" data-glow>
+                            <span class="timeline-date">2020 - 2024</span>
+                            <h3 class="timeline-role">B.Tech in Computer Science and Engineering</h3>
+                            <h4 class="timeline-company">Sri Vasavi Engineering College (AP, India)</h4>
+                            <p class="timeline-description">
+                                Graduated with an overall score of <strong>74.22%</strong>. Active in machine learning communities, research teams, and cybersecurity clubs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Grid Section -->
+        <section class="projects-section" id="projects">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">My Work</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                </div>
+
+                <!-- Tabs Filter -->
+                <div class="projects-filter">
+                    <button class="filter-tab active" data-filter="all">All Projects</button>
+                    <button class="filter-tab" data-filter="fullstack">Full-Stack / E-Commerce</button>
+                    <button class="filter-tab" data-filter="ai">AI / RAG</button>
+                    <button class="filter-tab" data-filter="security">Security & Utilities</button>
+                </div>
+
+                <div class="projects-grid" id="github-projects-grid">
+                    <!-- Default fallback projects populated here, updated dynamically by script.js -->
+                    <!-- Project 1: LiveGreen Honey -->
+                    <div class="project-card" data-category="fullstack ai" data-glow>
+                        <div class="project-image-mock flex-center">
+                            <i data-lucide="shopping-bag" class="mock-img-icon text-primary"></i>
+                            <div class="mock-bg-mesh"></div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">MERN Stack</span>
+                                <span class="tag">Hugging Face</span>
+                                <span class="tag">Razorpay</span>
+                            </div>
+                            <h3 class="project-card-title">LiveGreen Honey</h3>
+                            <p class="project-card-description">
+                                A high-end full-stack e-commerce store built for a natural honey brand. Equipped with a custom-engineered AI chatbot utilizing Retrieval-Augmented Generation (RAG) and Hugging Face APIs to answer customer product queries dynamically.
+                            </p>
+                            <div class="project-links">
+                                <span class="project-link-disabled">
+                                    <i data-lucide="globe"></i>
+                                    <span>Live Site</span>
+                                </span>
+                                <a href="https://github.com/sriram84502" target="_blank" rel="noopener noreferrer" class="project-link-active">
+                                    <i data-lucide="github"></i>
+                                    <span>Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Manscara Skincare -->
+                    <div class="project-card" data-category="fullstack" data-glow>
+                        <div class="project-image-mock flex-center">
+                            <i data-lucide="sparkles" class="mock-img-icon text-accent"></i>
+                            <div class="mock-bg-mesh mock-bg-mesh--alt"></div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">MongoDB</span>
+                                <span class="tag">Express</span>
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                            </div>
+                            <h3 class="project-card-title">Manscara</h3>
+                            <p class="project-card-description">
+                                A highly scalable, optimized e-commerce application tailored for a men's skincare brand focused on anti-acne formulations. Standardized on a fast, modern MERN architecture, payment flows via Razorpay, and direct logistics shipping updates.
+                            </p>
+                            <div class="project-links">
+                                <span class="project-link-disabled">
+                                    <i data-lucide="globe"></i>
+                                    <span>Live Site</span>
+                                </span>
+                                <a href="https://github.com/sriram84502" target="_blank" rel="noopener noreferrer" class="project-link-active">
+                                    <i data-lucide="github"></i>
+                                    <span>Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: FlyGrad AI Platform -->
+                    <div class="project-card" data-category="ai" data-glow>
+                        <div class="project-image-mock flex-center">
+                            <i data-lucide="graduation-cap" class="mock-img-icon text-success"></i>
+                            <div class="mock-bg-mesh mock-bg-mesh--three"></div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">React.js</span>
+                                <span class="tag">Hugging Face API</span>
+                                <span class="tag">LLM Chatbot</span>
+                            </div>
+                            <h3 class="project-card-title">FlyGrad Platform</h3>
+                            <p class="project-card-description">
+                                An intelligent educational consultancy and travel platform. Featuring a context-aware customer support chatbot using advanced LLM pipelines for immediate response capabilities and smart query routing.
+                            </p>
+                            <div class="project-links">
+                                <span class="project-link-disabled">
+                                    <i data-lucide="globe"></i>
+                                    <span>Live Site</span>
+                                </span>
+                                <a href="https://github.com/sriram84502" target="_blank" rel="noopener noreferrer" class="project-link-active">
+                                    <i data-lucide="github"></i>
+                                    <span>Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: OpenAPI-to-APIM Utility -->
+                    <div class="project-card" data-category="security" data-glow>
+                        <div class="project-image-mock flex-center">
+                            <i data-lucide="cable" class="mock-img-icon text-primary"></i>
+                            <div class="mock-bg-mesh"></div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">YAML</span>
+                                <span class="tag">Azure APIM</span>
+                            </div>
+                            <h3 class="project-card-title">APIM OpenAPI Automator</h3>
+                            <p class="project-card-description">
+                                Built for enterprise engagements at TCS to automate the generation of YAML/OpenAPI configuration files from Postman Collections. Drastically minimized manual onboarding hours for publishing backend APIs into Azure API Management gateway.
+                            </p>
+                            <div class="project-links">
+                                <span class="project-link-disabled">
+                                    <i data-lucide="shield-check"></i>
+                                    <span>Enterprise Conf</span>
+                                </span>
+                                <span class="project-link-disabled">
+                                    <i data-lucide="github"></i>
+                                    <span>Private Code</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Playgrounds & Sandbox Section -->
+        <section class="playground-section" id="terminal">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">Cybersecurity & AI Playgrounds</span>
+                    <h2 class="section-title">Interactive Sandbox Hub</h2>
+                    <p class="section-header-description">
+                        Explore interactive simulations demonstrating Homomorphic Cryptography, API vulnerability scanning, and an Easter Egg command-line security console.
+                    </p>
+                </div>
+
+                <!-- Tab Selectors -->
+                <div class="playground-tabs-container">
+                    <div class="playground-tabs">
+                        <button class="playground-tab active" data-target="terminal-sandbox">
+                            <i data-lucide="terminal"></i>
+                            <span>💻 Terminal Console & CTF</span>
+                        </button>
+                        <button class="playground-tab" data-target="api-sandbox">
+                            <i data-lucide="bug"></i>
+                            <span>🕷️ API Pentest Simulator</span>
+                        </button>
+                        <button class="playground-tab" data-target="tls-sandbox">
+                            <i data-lucide="lock"></i>
+                            <span>🛡️ SSL/TLS 1.3 Handshake</span>
+                        </button>
+                        <button class="playground-tab" data-target="fhe-sandbox">
+                            <i data-lucide="shield-check"></i>
+                            <span>🔐 FHE CKKS Sandbox</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tab 4: FHE Sandbox Panel -->
+                <div class="sandbox-panel" id="fhe-sandbox">
+                    <div class="fhe-grid">
+                        <!-- Column 1: Plaintext Inputs & Ciphertext Logs -->
+                        <div class="fhe-card" data-glow>
+                                <div class="fhe-title-badge">
+                                    <i data-lucide="cpu"></i>
+                                    <span>Client-Side Telemetry</span>
+                                </div>
+                                <h3 class="fhe-subtitle">Plaintext EV Telemetry</h3>
+                                <p class="paragraph text-muted" style="font-size: 0.9rem; margin-bottom: 20px;">
+                                    Adjust battery parameters to simulate active electric vehicle sensor outputs.
+                                </p>
+                                
+                                <div class="slider-group">
+                                    <div class="slider-header">
+                                        <span class="slider-label">Cell Voltage (V)</span>
+                                        <span class="slider-value" id="fhe-voltage-val">3.70 V</span>
+                                    </div>
+                                    <input type="range" min="3.20" max="4.20" step="0.01" value="3.70" class="custom-range" id="fhe-voltage-slider">
+                                </div>
+                                
+                                <div class="slider-group">
+                                    <div class="slider-header">
+                                        <span class="slider-label">Temperature (°C)</span>
+                                        <span class="slider-value" id="fhe-temp-val">25.0 °C</span>
+                                    </div>
+                                    <input type="range" min="15.0" max="55.0" step="0.1" value="25.0" class="custom-range" id="fhe-temp-slider">
+                                </div>
+
+                                <div class="slider-group">
+                                    <div class="slider-header">
+                                        <span class="slider-label">Internal Resistance (mΩ)</span>
+                                        <span class="slider-value" id="fhe-res-val">2.10 mΩ</span>
+                                    </div>
+                                    <input type="range" min="1.20" max="4.50" step="0.05" value="2.10" class="custom-range" id="fhe-res-slider">
+                                </div>
+
+                                <div style="margin-top: 30px;">
+                                    <span class="crypt-log-title">CKKS Encrypted Ciphertext E(telemetry):</span>
+                                    <div class="fhe-ciphertext-log" id="fhe-hex-log">Select metrics or drag sliders to generate CKKS ciphertexts...</div>
+                                    <div class="fhe-metric-badge" style="margin-top: 10px; padding: 8px 12px; font-size: 0.8rem;">
+                                        <span class="fhe-metric-badge-label">Encryption Scheme:</span>
+                                        <span class="fhe-metric-badge-val" style="color: var(--accent);">CKKS Polynomial</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Column 2: FHE Cryptographic Key Vault -->
+                            <div class="fhe-card fhe-card--accent" data-glow>
+                                <div class="fhe-title-badge" style="background: rgba(var(--accent-raw), 0.1); color: var(--accent);">
+                                    <i data-lucide="key"></i>
+                                    <span>🔐 FHE Cryptographic Key Vault</span>
+                                </div>
+                                <h3 class="fhe-subtitle">CKKS Public & Secret Parameters</h3>
+                                <p class="paragraph text-muted" style="font-size: 0.85rem; margin-bottom: 15px;">
+                                    Homomorphic computations require evaluation keys. Generate and inspect CKKS parameters.
+                                </p>
+                                
+                                <div style="display: flex; flex-direction: column; gap: 8px; font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 20px; background: rgba(0,0,0,0.2); padding: 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05);">
+                                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 4px;">
+                                        <span style="color: var(--accent);">Secret Key s:</span>
+                                        <span id="fhe-key-secret" style="color: #ffffff; font-weight: bold;">0x3F82...9A2C</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 4px;">
+                                        <span style="color: var(--primary);">Public Key pk:</span>
+                                        <span id="fhe-key-public" style="color: #ffffff;">(c0, c1) Poly</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 4px;">
+                                        <span style="color: var(--text-muted);">Relin Key rlk:</span>
+                                        <span id="fhe-key-rlk" style="color: #ffffff;">0xAE19...BC7E</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <span style="color: var(--text-muted);">Galois Keys gk:</span>
+                                        <span id="fhe-key-gk" style="color: #ffffff;">16 Rotation Keys</span>
+                                    </div>
+                                </div>
+
+                                <div class="noise-budget-wrapper" style="margin-bottom: 15px;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                                        <span style="font-size: 0.8rem; font-weight: 700; color: #ffffff;">CKKS Noise Budget</span>
+                                        <span id="fhe-noise-val" style="font-size: 0.8rem; font-weight: bold; color: #10b981; font-family: var(--font-mono);">80.0 dB</span>
+                                    </div>
+                                    <!-- Linear Progress Bar -->
+                                    <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+                                        <div id="fhe-noise-bar" style="width: 100%; height: 100%; background: linear-gradient(90deg, #ef4444, #f59e0b, #10b981); border-radius: 4px; transition: width 0.3s ease;"></div>
+                                    </div>
+                                    <!-- Flashing Warning Badge -->
+                                    <div id="fhe-noise-warning" style="display: none; margin-top: 8px; color: #ef4444; font-family: var(--font-mono); font-size: 0.65rem; font-weight: bold; text-align: center; animation: pulseRed 1s infinite;">
+                                        ⚠️ [WARNING: HIGH NOISE - BOOTSTRAPPING REQUIRED]
+                                    </div>
+                                </div>
+
+                                <div style="display: flex; gap: 8px;">
+                                    <button class="btn btn--secondary" id="fhe-bootstrap-btn" style="flex: 1; padding: 6px 10px; font-size: 0.75rem; display: flex; align-items: center; justify-content: center; gap: 4px;">
+                                        <i data-lucide="refresh-cw" id="fhe-bootstrap-icon" style="width: 12px; height: 12px;"></i> Bootstrap
+                                    </button>
+                                    <button class="btn btn--primary" id="fhe-download-keys-btn" style="flex: 1; padding: 6px 10px; font-size: 0.75rem; display: flex; align-items: center; justify-content: center; gap: 4px;">
+                                        <i data-lucide="download" style="width: 12px; height: 12px;"></i> Get Keys
+                                    </button>
+                                </div>
+                            </div>
+
+                        <!-- Column 3: Dynamic Neural Space & Decrypted Outputs -->
+                        <div class="fhe-stages-col">
+                            <div class="fhe-stages-container">
+                                <!-- Stage 2: Encrypted NN Evaluation -->
+                                <div class="fhe-stage-panel">
+                                    <div class="fhe-stage-header">
+                                        <span class="stage-num">STAGE 02 / FHE EVALUATION</span>
+                                        <span class="stage-label">Homomorphic Neural Computation</span>
+                                    </div>
+                                    <p class="paragraph text-muted" style="font-size: 0.85rem; margin-bottom: 15px;">
+                                        The server evaluates Sriram's <strong>Ensemble RVFLN</strong> model directly on the ciphertexts. Watch nodes activate in the encrypted space.
+                                    </p>
+                                    
+                                    <div class="fhe-network-space">
+                                        <svg class="fhe-network-svg" id="fhe-network-svg" viewBox="0 0 500 220">
+                                            <!-- Connections -->
+                                            <!-- Input layer to Hidden Layer -->
+                                            <path d="M 50 50 L 220 30" class="fhe-link" id="link-v-h1" />
+                                            <path d="M 50 50 L 220 90" class="fhe-link" id="link-v-h2" />
+                                            <path d="M 50 50 L 220 150" class="fhe-link" id="link-v-h3" />
+                                            
+                                            <path d="M 50 110 L 220 30" class="fhe-link" id="link-t-h1" />
+                                            <path d="M 50 110 L 220 90" class="fhe-link" id="link-t-h2" />
+                                            <path d="M 50 110 L 220 150" class="fhe-link" id="link-t-h3" />
+
+                                            <path d="M 50 170 L 220 30" class="fhe-link" id="link-r-h1" />
+                                            <path d="M 50 170 L 220 90" class="fhe-link" id="link-r-h2" />
+                                            <path d="M 50 170 L 220 150" class="fhe-link" id="link-r-h3" />
+
+                                            <!-- Hidden Layer to Output -->
+                                            <path d="M 220 30 L 410 100" class="fhe-link" id="link-h1-o" />
+                                            <path d="M 220 90 L 410 100" class="fhe-link" id="link-h2-o" />
+                                            <path d="M 220 150 L 410 100" class="fhe-link" id="link-h3-o" />
+
+                                            <!-- Directly Linked Input to Output (RVFLN Structure) -->
+                                            <path d="M 50 110 Q 200 200, 410 100" class="fhe-link" id="link-t-o" style="stroke-dasharray: 4;" />
+
+                                            <!-- Input Layer Nodes -->
+                                            <circle cx="50" cy="50" r="16" class="fhe-node active" id="node-voltage" />
+                                            <text x="50" y="54" fill="#ffffff" font-size="9" text-anchor="middle" font-family="var(--font-mono)">E(V)</text>
+                                            
+                                            <circle cx="50" cy="110" r="16" class="fhe-node active" id="node-temp" />
+                                            <text x="50" y="114" fill="#ffffff" font-size="9" text-anchor="middle" font-family="var(--font-mono)">E(T)</text>
+
+                                            <circle cx="50" cy="170" r="16" class="fhe-node active" id="node-res" />
+                                            <text x="50" y="174" fill="#ffffff" font-size="9" text-anchor="middle" font-family="var(--font-mono)">E(R)</text>
+
+                                            <!-- Hidden Layer Nodes -->
+                                            <circle cx="220" cy="30" r="14" class="fhe-node" id="node-h1" />
+                                            <text x="220" y="34" fill="#ffffff" font-size="8" text-anchor="middle" font-family="var(--font-mono)">H1</text>
+
+                                            <circle cx="220" cy="90" r="14" class="fhe-node" id="node-h2" />
+                                            <text x="220" y="94" fill="#ffffff" font-size="8" text-anchor="middle" font-family="var(--font-mono)">H2</text>
+
+                                            <circle cx="220" cy="150" r="14" class="fhe-node" id="node-h3" />
+                                            <text x="220" y="154" fill="#ffffff" font-size="8" text-anchor="middle" font-family="var(--font-mono)">H3</text>
+
+                                            <!-- Output Layer Node -->
+                                            <circle cx="410" cy="100" r="20" class="fhe-node output-node" id="node-output" />
+                                            <text x="410" y="104" fill="#ffffff" font-size="8" text-anchor="middle" font-family="var(--font-mono)">E(SoH)</text>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <!-- Stage 3: Decrypted Result -->
+                                <div class="fhe-stage-panel">
+                                    <div class="fhe-stage-header" style="margin-bottom: 10px;">
+                                        <span class="stage-num" style="color: var(--accent);">STAGE 03 / DECRYPTION</span>
+                                        <span class="stage-label">Secure Telemetry Output</span>
+                                    </div>
+                                    <div class="fhe-results-panel">
+                                        <!-- Radial Gauge -->
+                                        <div class="fhe-gauge-wrapper">
+                                            <svg class="fhe-gauge-svg">
+                                                <circle cx="75" cy="75" r="60" class="gauge-bg"></circle>
+                                                <circle cx="75" cy="75" r="60" class="gauge-fill" id="fhe-gauge-fill"></circle>
+                                            </svg>
+                                            <div class="gauge-text">
+                                                <span class="gauge-percent" id="fhe-soh-percent">--</span>
+                                                <span class="gauge-unit">SoH</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- decrypted metadata badges -->
+                                        <div class="fhe-details-group">
+                                            <div class="fhe-metric-badge">
+                                                <span class="fhe-metric-badge-label">Predicted State of Health:</span>
+                                                <span class="fhe-metric-badge-val" id="fhe-soh-status">Calculating...</span>
+                                            </div>
+                                            <div class="fhe-metric-badge">
+                                                <span class="fhe-metric-badge-label">Privacy Leakage Rate:</span>
+                                                <span class="fhe-metric-badge-val" style="color: #10b981;">0.00% (Absolute Zero)</span>
+                                            </div>
+                                            <div class="fhe-metric-badge">
+                                                <span class="fhe-metric-badge-label">FHE Mathematical Proof:</span>
+                                                <span class="fhe-metric-badge-val" style="color: var(--accent); font-size: 0.75rem;">Homomorphic CKKS Verified</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: API Pentest Sandbox Panel -->
+                <div class="sandbox-panel" id="api-sandbox">
+                    <div class="api-simulator-wrapper">
+                        <div class="api-console" data-glow>
+                            <!-- HTTP Request Address Bar -->
+                            <div class="api-address-bar">
+                                <span class="api-method-badge">GET</span>
+                                <input type="text" class="api-url-input" id="api-url-input" value="https://api.tcsbank-secure.com/v1/dashboard?user_id=84" placeholder="Edit query parameters...">
+                                <button class="btn btn--primary" id="api-send-btn" style="padding: 8px 20px; font-size: 0.85rem;">
+                                    <span>Send Request</span>
+                                </button>
+                            </div>
+
+                            <!-- Alert Banner (Vulnerability / Secure status) -->
+                            <div class="api-alert-banner api-alert-banner--danger" id="api-alert-banner">
+                                <i data-lucide="shield-alert"></i>
+                                <span id="api-alert-text">BOLA Exploit State Active: Querying unchecked customer parameter IDs.</span>
+                            </div>
+
+                            <!-- Console Split Panels -->
+                            <div class="api-twin-panels">
+                                <!-- Left Panel: Active Request Query Configurations / JWT debugger -->
+                                <div class="api-sub-panel">
+                                    <div class="api-panel-header" style="justify-content: flex-start; gap: 10px; padding: 0 10px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                        <button class="api-header-tab active" id="api-tab-headers" style="background: none; border: none; color: #ffffff; font-family: var(--font-sans); font-size: 0.8rem; font-weight: 600; padding: 10px 5px; cursor: pointer; border-bottom: 2px solid var(--accent); transition: all 0.2s;">Headers</button>
+                                        <button class="api-header-tab" id="api-tab-jwt" style="background: none; border: none; color: var(--text-muted); font-family: var(--font-sans); font-size: 0.8rem; font-weight: 600; padding: 10px 5px; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s;">JWT Debugger</button>
+                                        <span class="api-status-badge status-200" style="margin-left: auto;" id="jwt-validation-badge">VALID</span>
+                                    </div>
+                                    
+                                    <!-- Tab Content: Headers -->
+                                    <div class="api-tab-content" id="api-content-headers" style="height: 180px;">
+                                        <textarea class="api-json-editor" id="api-request-headers" readonly style="height: 100%; min-height: 100%; border: none;">
+{
+  "Accept": "application/json",
+  "Authorization": "Bearer static_jwt_session_token_user_84",
+  "User-Agent": "SecuredPentestTool/1.0.4",
+  "Origin": "sriram-portfolio"
+}</textarea>
+                                    </div>
+                                    
+                                    <!-- Tab Content: JWT Debugger -->
+                                    <div class="api-tab-content" id="api-content-jwt" style="display: none; flex-direction: column; gap: 8px; padding: 12px; height: 180px; overflow-y: auto; background: rgba(0,0,0,0.15);">
+                                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                                            <span style="font-size: 0.65rem; color: #3b82f6; font-family: var(--font-mono); font-weight: 600;">HEADER: ALGORITHM & TOKEN TYPE</span>
+                                            <textarea class="jwt-editor-field" id="jwt-header-editor" style="width: 100%; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: #3b82f6; font-family: var(--font-mono); font-size: 0.75rem; padding: 6px; resize: none; height: 35px; overflow-y: hidden;">{"alg":"HS256","typ":"JWT"}</textarea>
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                                            <span style="font-size: 0.65rem; color: var(--accent); font-family: var(--font-mono); font-weight: 600;">PAYLOAD: DATA / CLAIMS</span>
+                                            <textarea class="jwt-editor-field" id="jwt-payload-editor" style="width: 100%; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--accent); font-family: var(--font-mono); font-size: 0.75rem; padding: 6px; resize: none; height: 50px; overflow-y: auto;">{"id":84,"name":"Sai Sriram Vanapalli","role":"Premium Security Analyst"}</textarea>
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                                            <span style="font-size: 0.65rem; color: #10b981; font-family: var(--font-mono); font-weight: 600;">SIGNATURE VERIFICATION</span>
+                                            <div style="display: flex; gap: 8px; align-items: center;">
+                                                <input type="text" id="jwt-signature-val" value="hO1SgU-W1n-X97G32b-p59Y6" readonly style="flex: 1; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: #10b981; font-family: var(--font-mono); font-size: 0.75rem; padding: 6px; height: 28px;">
+                                                <button class="btn" id="jwt-sign-btn" style="padding: 4px 10px; font-size: 0.65rem; background: rgba(var(--primary-raw), 0.15); border: 1px solid var(--primary); color: var(--primary); border-radius: 4px; cursor: pointer; height: 28px;">Mitigate Sign</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Right Panel: Returned API JSON Payload Response -->
+                                <div class="api-sub-panel">
+                                    <div class="api-panel-header">
+                                        <h4 class="api-panel-title">Response JSON Body</h4>
+                                        <span class="api-status-badge status-200" id="api-response-status">200 OK</span>
+                                    </div>
+                                    <pre class="api-json-editor" id="api-response-body" style="overflow-y: auto;"></pre>
+                                </div>
+                            </div>
+
+                            <!-- API Mitigation Controls & Code Diffs -->
+                            <div class="api-mitigation-controls">
+                                <div class="api-mitigation-header">
+                                    <div class="api-mitigation-text">
+                                        <h4 class="fhe-subtitle" style="font-size: 1.15rem; margin-bottom: 2px;">OWASP API Security Top 10 Audit</h4>
+                                        <p class="mitigation-explainer" id="api-mitigation-explainer">
+                                            Currently simulating a vulnerable <strong>BOLA (Broken Object Level Authorization)</strong> database check. The server returns record payloads without validating session identity checks.
+                                        </p>
+                                    </div>
+                                    <button class="btn btn--secondary" id="api-mitigate-btn" style="padding: 10px 20px; font-size: 0.85rem; border-color: rgba(var(--primary-raw), 0.3);">
+                                        <i data-lucide="shield-alert" class="text-primary"></i>
+                                        <span id="api-mitigate-btn-text">Apply Secure Mitigation</span>
+                                    </button>
+                                </div>
+
+                                <!-- Mitigated code diff -->
+                                <div class="api-code-diff-container" id="api-code-diff-box">
+                                    <div class="diff-header">
+                                        <i data-lucide="file-code"></i>
+                                        <span>Security Patch: /controllers/userController.js (TCS Remediation Standard)</span>
+                                    </div>
+                                    <div class="diff-body"><span class="diff-line diff-line--comment">// Vulnerable vs. Remediated API Endpoint query handler</span>
+<span class="diff-line diff-line--deleted">- // VULNERABLE DIRECT ACCESS CHECK:</span>
+<span class="diff-line diff-line--deleted">- exports.getUserDashboard = async (req, res) =&gt; {</span>
+<span class="diff-line diff-line--deleted">-     const userId = req.query.user_id; // Unvalidated input parameters</span>
+<span class="diff-line diff-line--deleted">-     const profile = await User.findById(userId); // Vulnerable to IDOR / BOLA parameter tampering</span>
+<span class="diff-line diff-line--deleted">-     return res.status(200).json(profile);</span>
+<span class="diff-line diff-line--deleted">- };</span>
+<span class="diff-line diff-line--added">+ // REMEDIATED STRATEGY: Enforce Session Validation Claims</span>
+<span class="diff-line diff-line--added">+ exports.getUserDashboard = async (req, res) =&gt; {</span>
+<span class="diff-line diff-line--added">+     const authUserId = req.user.id; // Retrieve ID securely decoded from validated JWT token claim</span>
+<span class="diff-line diff-line--added">+     const queryUserId = req.query.user_id;</span>
+<span class="diff-line diff-line--added">+     </span>
+<span class="diff-line diff-line--added">+     if (parseInt(queryUserId) !== parseInt(authUserId)) {</span>
+<span class="diff-line diff-line--added">+         return res.status(403).json({ error: "Access Denied", reason: "BOLA policy block: User unauthorized to inspect target resource ID" });</span>
+<span class="diff-line diff-line--added">+     }</span>
+<span class="diff-line diff-line--added">+     const profile = await User.findById(queryUserId);</span>
+<span class="diff-line diff-line--added">+     return res.status(200).json(profile);</span>
+<span class="diff-line diff-line--added">+ };</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 1: Terminal Sandbox Panel -->
+                <div class="sandbox-panel active" id="terminal-sandbox">
+                    <div class="terminal-window" data-glow>
+                        <!-- Title Bar -->
+                        <div class="terminal-titlebar">
+                            <div class="titlebar-buttons">
+                                <span class="bar-btn bar-btn--close"></span>
+                                <span class="bar-btn bar-btn--minimize"></span>
+                                <span class="bar-btn bar-btn--expand"></span>
+                            </div>
+                            <div class="titlebar-title">sriram@securescan:~</div>
+                            <div class="titlebar-status">
+                                <span class="status-indicator status-indicator--secure"></span>
+                                <span class="status-text">SECURE</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Console Content -->
+                        <div class="terminal-console" id="console-screen">
+                            <div class="console-line text-muted">Sriram Security Sandbox [Version 1.0.4]</div>
+                            <div class="console-line text-muted">(c) 2026 Sai Sriram Vanapalli. Local system status: SECURE.</div>
+                            <br>
+                            <div class="console-line">Type <span class="text-accent">help</span> to begin inspecting the secure interface.</div>
+                            <br>
+                            <!-- Dynamic output loaded here -->
+                            <div id="console-output-history"></div>
+                            
+                            <!-- Main Input Line -->
+                            <div class="console-input-row">
+                                <span class="console-prompt">sriram@securescan:~$</span>
+                                <input type="text" id="console-input-field" class="console-input" autocomplete="off" spellcheck="false" placeholder="type 'help'...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 4: SSL/TLS 1.3 Handshake Sandbox Panel -->
+                <div class="sandbox-panel" id="tls-sandbox">
+                    <div class="tls-wrapper" style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+                        <!-- Left Col: SVG Diagram -->
+                        <div class="fhe-card" data-glow style="display: flex; flex-direction: column; padding: 20px;">
+                            <div class="fhe-title-badge">
+                                <i data-lucide="lock"></i>
+                                <span>SSL/TLS 1.3 Cryptographic Handshake</span>
+                            </div>
+                            <h3 class="fhe-subtitle">Client-Server Negotiation Timeline</h3>
+                            <p class="paragraph text-muted" style="font-size: 0.9rem; margin-bottom: 20px;">
+                                Step through the modern TLS 1.3 handshake. Watch mathematical Diffie-Hellman keys exchange and secure session derivation in real-time.
+                            </p>
+                            
+                            <!-- Diagram Space -->
+                            <div class="tls-diagram-container" style="position: relative; flex: 1; min-height: 340px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; display: flex; justify-content: space-between; padding: 20px 40px; overflow: hidden;">
+                                <!-- Client Node -->
+                                <div class="tls-node" id="tls-node-client" style="display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 2;">
+                                    <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(59, 130, 246, 0.1); border: 2px solid #3b82f6; display: flex; align-items: center; justify-content: center; color: #3b82f6; box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);">
+                                        <i data-lucide="laptop" style="width: 24px; height: 24px;"></i>
+                                    </div>
+                                    <span style="font-size: 0.8rem; font-weight: 600; color: #ffffff; font-family: var(--font-sans);">Client (User Browser)</span>
+                                    <span id="tls-client-key-indicator" style="font-size: 0.65rem; color: #3b82f6; font-family: var(--font-mono); visibility: hidden;">x = 0x5F3E</span>
+                                </div>
+                                
+                                <!-- Connection Pipeline Path / SVG overlay -->
+                                <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;">
+                                    <!-- Flow lines -->
+                                    <line x1="65" y1="45" x2="65" y2="320" stroke="rgba(255,255,255,0.1)" stroke-dasharray="4" stroke-width="1.5" />
+                                    <line x1="100%" y1="45" x2="100%" y2="320" transform="translate(-65, 0)" stroke="rgba(255,255,255,0.1)" stroke-dasharray="4" stroke-width="1.5" />
+                                    
+                                    <!-- Dynamic Packet Flow lines (1 to 4) -->
+                                    <g id="tls-flow-lines"></g>
+                                </svg>
+                                
+                                <!-- Step Messages Stack (Horizontal lines) -->
+                                <div class="tls-steps-visual" style="position: absolute; left: 80px; right: 80px; top: 130px; bottom: 15px; display: flex; flex-direction: column; justify-content: space-around; pointer-events: none;">
+                                    <div class="tls-step-line" id="tls-step-1" style="display: flex; justify-content: flex-start; align-items: center; padding: 6px 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); transition: all 0.3s; opacity: 0.4;">
+                                        <span style="font-weight: bold; color: var(--accent); margin-right: 8px;">1. ClientHello</span> (Key Share: g^x mod p) ➔
+                                    </div>
+                                    <div class="tls-step-line" id="tls-step-2" style="display: flex; justify-content: flex-end; align-items: center; padding: 6px 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); transition: all 0.3s; opacity: 0.4;">
+                                        ⮨ <span style="font-weight: bold; color: var(--primary); margin-left: 8px;">2. ServerHello + Cert</span> (Key Share: g^y mod p)
+                                    </div>
+                                    <div class="tls-step-line" id="tls-step-3" style="display: flex; justify-content: center; align-items: center; padding: 6px 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); transition: all 0.3s; opacity: 0.4; text-align: center;">
+                                        ⚡ <span style="font-weight: bold; color: #10b981; margin: 0 6px;">3. Cryptographic Derivation</span> (DH Secret: g^xy mod p) ⚡
+                                    </div>
+                                    <div class="tls-step-line" id="tls-step-4" style="display: flex; justify-content: space-between; align-items: center; padding: 6px 12px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); transition: all 0.3s; opacity: 0.4;">
+                                        🔒 <span>4. Finished & Encrypted Symmetrical Session Active</span> 🔒
+                                    </div>
+                                </div>
+                                
+                                <!-- Server Node -->
+                                <div class="tls-node" id="tls-node-server" style="display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 2;">
+                                    <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(16, 185, 129, 0.1); border: 2px solid #10b981; display: flex; align-items: center; justify-content: center; color: #10b981; box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);">
+                                        <i data-lucide="server" style="width: 24px; height: 24px;"></i>
+                                    </div>
+                                    <span style="font-size: 0.8rem; font-weight: 600; color: #ffffff; font-family: var(--font-sans);">Server (TCS Gateway)</span>
+                                    <span id="tls-server-key-indicator" style="font-size: 0.65rem; color: #10b981; font-family: var(--font-mono); visibility: hidden;">y = 0xAA9C</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Control Player buttons -->
+                            <div style="display: flex; justify-content: center; gap: 10px; margin-top: 15px;">
+                                <button class="btn btn--secondary" id="tls-btn-prev" style="padding: 8px 16px; font-size: 0.8rem;">
+                                    <i data-lucide="chevron-left" style="width: 14px; height: 14px; margin-right: 4px;"></i> Prev
+                                </button>
+                                <button class="btn btn--primary" id="tls-btn-next" style="padding: 8px 24px; font-size: 0.8rem;">
+                                    Next Step <i data-lucide="chevron-right" style="width: 14px; height: 14px; margin-left: 4px;"></i>
+                                </button>
+                                <button class="btn btn--secondary" id="tls-btn-auto" style="padding: 8px 16px; font-size: 0.8rem;">
+                                    <i data-lucide="play" style="width: 14px; height: 14px; margin-right: 4px;"></i> Auto
+                                </button>
+                                <button class="btn btn--secondary" id="tls-btn-reset" style="padding: 8px 16px; font-size: 0.8rem;">
+                                    <i data-lucide="rotate-ccw" style="width: 14px; height: 14px;"></i>
+                                </button>
+                            </div>
+                                       <!-- Right Col: Cryptographic Log Output with tabs -->
+                        <div class="fhe-card" data-glow style="display: flex; flex-direction: column; padding: 20px; overflow: hidden;">
+                            <div class="tls-tab-headers" style="display: flex; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 12px; gap: 10px;">
+                                <button class="tls-tab active" id="tls-tab-details" style="background: none; border: none; color: var(--accent); font-family: var(--font-mono); font-size: 0.8rem; font-weight: bold; padding: 6px 12px; cursor: pointer; border-bottom: 2px solid var(--accent); transition: all 0.3s; outline: none;">Handshake Details</button>
+                                <button class="tls-tab" id="tls-tab-wireshark" style="background: none; border: none; color: var(--text-muted); font-family: var(--font-mono); font-size: 0.8rem; font-weight: bold; padding: 6px 12px; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.3s; outline: none;">🔌 Wireshark Sniffer</button>
+                            </div>
+                            
+                            <!-- Tab 1: Handshake Details -->
+                            <div class="tls-tab-panel" id="tls-panel-details" style="display: flex; flex-direction: column; flex: 1;">
+                                <h4 class="api-panel-title" style="margin-bottom: 8px;">Cryptographic Negotiation Log</h4>
+                                <div class="fhe-ciphertext-log" id="tls-log-box" style="flex: 1; height: auto; min-height: 250px; max-height: 385px; font-family: var(--font-mono); font-size: 0.75rem; line-height: 1.4; padding: 12px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; overflow-y: auto;">
+                                    [SYSTEM INFO] Click "Next Step" to initiate a secure SSL/TLS 1.3 handshake negotiation...
+                                </div>
+                                
+                                <!-- Math parameters status cards -->
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px;">
+                                    <div style="background: rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.03); border-radius: 4px; padding: 8px; text-align: center;">
+                                        <span style="font-size: 0.6rem; color: var(--text-muted); display: block; font-family: var(--font-mono);">Diffie-Hellman P (Prime)</span>
+                                        <span style="font-size: 0.7rem; color: #3b82f6; font-family: var(--font-mono); font-weight: bold; overflow-wrap: anywhere;">0xFFFFFFFFFFFFC90F</span>
+                                    </div>
+                                    <div style="background: rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.03); border-radius: 4px; padding: 8px; text-align: center;">
+                                        <span style="font-size: 0.6rem; color: var(--text-muted); display: block; font-family: var(--font-mono);">Diffie-Hellman Generator G</span>
+                                        <span style="font-size: 0.7rem; color: var(--accent); font-family: var(--font-mono); font-weight: bold;">2</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tab 2: Wireshark Sniffer -->
+                            <div class="tls-tab-panel" id="tls-panel-wireshark" style="display: none; flex-direction: column; flex: 1;">
+                                <h4 class="api-panel-title" style="margin-bottom: 8px; color: var(--accent);">🔌 Wireshark Live Packet Stream</h4>
+                                <div class="fhe-ciphertext-log" id="tls-wireshark-stream" style="flex: 1; height: auto; min-height: 250px; max-height: 385px; font-family: var(--font-mono); font-size: 0.75rem; line-height: 1.4; padding: 12px; background: #0c0f12; border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; overflow-y: auto;">
+                                    <div style="color: #64748b; font-style: italic;">[CONSOLE] Awaiting active handshake packets...</div>
+                                </div>
+                                <div style="font-size: 0.65rem; color: var(--text-muted); margin-top: 8px; font-family: var(--font-mono); text-align: right;">
+                                    Filter: <span style="color: #10b981; font-weight: bold;">tcp.port == 443 && tls</span>
+                                </div>
+                            </div>
+                        </div>    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section class="publications-section" id="publications">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">Applied Research</span>
+                    <h2 class="section-title">Scientific Publications</h2>
+                    <p class="section-header-description">
+                        Empirical machine learning and homomorphic encryption papers published in major international journals.
+                    </p>
+                </div>
+
+                <div class="publications-metrics-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-bottom: 40px;">
+                    <!-- Metric Card 1: Citations -->
+                    <div class="fhe-card fhe-card--accent" data-glow style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; position: relative; overflow: hidden; text-align: center;">
+                        <div style="position: absolute; right: -10px; bottom: -10px; opacity: 0.05; color: var(--accent);">
+                            <i data-lucide="graduation-cap" style="width: 80px; height: 80px;"></i>
+                        </div>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: bold; text-transform: uppercase; font-family: var(--font-sans); margin-bottom: 8px;">Google Scholar Citations</span>
+                        <h3 id="scholar-citations" style="font-size: 3rem; font-weight: 800; color: #ffffff; margin: 0; line-height: 1; font-family: var(--font-mono);">0</h3>
+                        <p style="font-size: 0.75rem; color: var(--accent); margin-top: 6px; font-family: var(--font-sans);">Peer-Reviewed Impact</p>
+                    </div>
+
+                    <!-- Metric Card 2: h-index -->
+                    <div class="fhe-card" data-glow style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; position: relative; overflow: hidden; text-align: center;">
+                        <div style="position: absolute; right: -10px; bottom: -10px; opacity: 0.05; color: var(--primary);">
+                            <i data-lucide="trending-up" style="width: 80px; height: 80px;"></i>
+                        </div>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: bold; text-transform: uppercase; font-family: var(--font-sans); margin-bottom: 8px;">h-index Metrics</span>
+                        <h3 id="scholar-hindex" style="font-size: 3rem; font-weight: 800; color: #ffffff; margin: 0; line-height: 1; font-family: var(--font-mono);">0</h3>
+                        <p style="font-size: 0.75rem; color: var(--primary); margin-top: 6px; font-family: var(--font-sans);">Publications with ≥ h citations</p>
+                    </div>
+
+                    <!-- Metric Card 3: i10-index -->
+                    <div class="fhe-card" data-glow style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; position: relative; overflow: hidden; text-align: center;">
+                        <div style="position: absolute; right: -10px; bottom: -10px; opacity: 0.05; color: var(--primary);">
+                            <i data-lucide="book-open" style="width: 80px; height: 80px;"></i>
+                        </div>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: bold; text-transform: uppercase; font-family: var(--font-sans); margin-bottom: 8px;">i10-index Metrics</span>
+                        <h3 id="scholar-i10index" style="font-size: 3rem; font-weight: 800; color: #ffffff; margin: 0; line-height: 1; font-family: var(--font-mono);">0</h3>
+                        <p style="font-size: 0.75rem; color: var(--primary); margin-top: 6px; font-family: var(--font-sans);">Publications with ≥ 10 citations</p>
+                    </div>
+                </div>
+
+                <div class="publications-list">
+                    <!-- Publication 1 -->
+                    <div class="pub-card" data-glow>
+                        <div class="pub-header">
+                            <span class="pub-year">2026</span>
+                            <span class="pub-venue">Transactions on Emerging Telecommunications Technologies</span>
+                        </div>
+                        <h3 class="pub-title">Encrypted Dynamic RVFLN Ensemble Learning for Privacy-Preserving State-of-Health Prediction in Electric Vehicle Batteries Using Fully Homomorphic Encryption CKKS</h3>
+                        <p class="pub-authors">S. S. Vanapalli, et al.</p>
+                        
+                        <div class="pub-collapsible">
+                            <button class="pub-collapse-btn">
+                                <span>View Abstract</span>
+                                <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            </button>
+                            <div class="pub-abstract-drawer">
+                                <p class="pub-abstract-text">
+                                    Published in <em>Transactions on Emerging Telecommunications Technologies (Wiley, 2026)</em>, this paper introduces the <strong>EDRVFLN</strong> framework. We integrate <strong>Dynamic Random Vector Functional Link Networks (RVFLNs)</strong> with <strong>Ensemble Learning</strong> to model complex, nonlinear battery degradation. To guarantee complete data privacy, the Cheon-Kim-Kim-Song (<strong>CKKS</strong>) Fully Homomorphic Encryption (<strong>FHE</strong>) scheme is deployed, enabling both model training and predictive inference directly on encrypted floating-point ciphertexts without decryption. Evaluated using the standard NASA lithium-ion battery telemetry datasets, the EDRVFLN system matches the predictive accuracy of traditional unencrypted architectures while ensuring absolute, mathematically proven data confidentiality throughout the analytical pipeline.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pub-actions">
+                            <a href="https://scholar.google.com/user=cZuM70IAAAAJ&hl=en&authuser=3" target="_blank" rel="noopener noreferrer" class="btn-pub">
+                                <i data-lucide="external-link"></i>
+                                <span>Visit Publication</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Publication 2 -->
+                    <div class="pub-card" data-glow>
+                        <div class="pub-header">
+                            <span class="pub-year">2025</span>
+                            <span class="pub-venue">Measurement</span>
+                        </div>
+                        <h3 class="pub-title">EDL-DRVFLNN: Ensemble Deep Learning with Dynamic Random Vector Functional Link Neural Networks for Privacy-Preserving Electric Vehicle Battery Health Prediction</h3>
+                        <p class="pub-authors">S. S. Vanapalli, et al.</p>
+                        
+                        <div class="pub-collapsible">
+                            <button class="pub-collapse-btn">
+                                <span>View Abstract</span>
+                                <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            </button>
+                            <div class="pub-abstract-drawer">
+                                <p class="pub-abstract-text">
+                                    Published in <em>Measurement (Elsevier, 2025)</em>, this paper presents <strong>EDL-DRVFLNN</strong>, a privacy-preserving ensemble deep learning framework utilizing <strong>Dynamic Random Vector Functional Link Neural Networks (DRVFLNN)</strong> for State-of-Health (SoH) prediction. By incorporating randomized learning mechanisms, the DRVFLNN architecture adapts dynamically to battery aging patterns with rapid closed-form training. Under strict privacy constraints, the system operates on telemetry datasets encrypted via the <strong>CKKS</strong> homomorphic scheme. Validation on NASA battery degradation profiles demonstrates that EDL-DRVFLNN achieves superior prediction robustness and minimized Root Mean Squared Error (<strong>RMSE</strong>) under full cryptographic privacy compliance.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pub-actions">
+                            <a href="https://scholar.google.com/user=cZuM70IAAAAJ&hl=en&authuser=3" target="_blank" rel="noopener noreferrer" class="btn-pub">
+                                <i data-lucide="external-link"></i>
+                                <span>Visit Publication</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Publication 3 -->
+                    <div class="pub-card" data-glow>
+                        <div class="pub-header">
+                            <span class="pub-year">2025</span>
+                            <span class="pub-venue">Neural Computing and Applications</span>
+                        </div>
+                        <h3 class="pub-title">PPDNN-SoH: Privacy-Preserving Deep Neural Network for Sustainable Electric Vehicle Battery State of Health Prediction</h3>
+                        <p class="pub-authors">S. S. Vanapalli, et al.</p>
+                        
+                        <div class="pub-collapsible">
+                            <button class="pub-collapse-btn">
+                                <span>View Abstract</span>
+                                <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            </button>
+                            <div class="pub-abstract-drawer">
+                                <p class="pub-abstract-text">
+                                    Published in <em>Neural Computing and Applications (Springer, 2025)</em>, this paper proposes <strong>PPDNN-SoH</strong>, a privacy-preserving deep neural network framework for sustainable battery health tracking. The system integrates Homomorphic Encryption (<strong>HE</strong>) using the <strong>TenSEAL</strong> package to perform multi-layered neural network feedforward calculations directly on encrypted telemetry. PPDNN-SoH provides comprehensive cryptographic protection across training data, model parameters, and input/output states. Evaluated on NASA lithium-ion battery cell datasets (<strong>B0005, B0006, B0007, and B0018</strong>), the architecture demonstrates robust defenses against model inversion, extraction, membership inference, evasion, and data poisoning attacks while matching standard DNN accuracy with practical computational overhead.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pub-actions">
+                            <a href="https://scholar.google.com/user=cZuM70IAAAAJ&hl=en&authuser=3" target="_blank" rel="noopener noreferrer" class="btn-pub">
+                                <i data-lucide="external-link"></i>
+                                <span>Visit Publication</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Publication 4 -->
+                    <div class="pub-card" data-glow>
+                        <div class="pub-header">
+                            <span class="pub-year">2024</span>
+                            <span class="pub-venue">Computers & Electrical Engineering</span>
+                        </div>
+                        <h3 class="pub-title">Privacy-Preserving State of Health Prediction for Electric Vehicle Batteries: A Comprehensive Review</h3>
+                        <p class="pub-authors">S. S. Vanapalli, et al.</p>
+                        
+                        <div class="pub-collapsible">
+                            <button class="pub-collapse-btn">
+                                <span>View Abstract</span>
+                                <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            </button>
+                            <div class="pub-abstract-drawer">
+                                <p class="pub-abstract-text">
+                                    Published in <em>Computers & Electrical Engineering (Elsevier, 2024)</em>, this comprehensive review examines the intersection of data-driven Battery Management Systems (<strong>BMS</strong>) and user privacy. As raw telemetry (voltage, temperature, current) poses severe security risks, we systematically analyze state-of-the-art privacy-preserving paradigms in EV diagnostics. The review evaluates cryptographic and decentralized architectures integrating Homomorphic Encryption (<strong>HE</strong>), Federated Learning (<strong>FL</strong>), Multi-Party Computation (<strong>MPC</strong>), and Differential Privacy (<strong>DP</strong>). By comparing key performance trade-offs in accuracy, communication latency, and security bounds, we establish secure next-generation BMS design paradigms for intelligent transportation systems.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pub-actions">
+                            <a href="https://scholar.google.com/user=cZuM70IAAAAJ&hl=en&authuser=3" target="_blank" rel="noopener noreferrer" class="btn-pub">
+                                <i data-lucide="external-link"></i>
+                                <span>Visit Publication</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">Let's Connect</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info-col">
+                        <h3 class="card-subtitle">Connect Directly</h3>
+                        <p class="paragraph text-muted">
+                            Whether you need assistance securing an API backend, developing a full-stack platform, or exploring custom AI pipelines, reach out directly.
+                        </p>
+                        
+                        <div class="contact-info-items">
+                            <div class="contact-info-item">
+                                <div class="info-icon flex-center">
+                                    <i data-lucide="mail"></i>
+                                </div>
+                                <div class="info-details">
+                                    <span class="info-label">Email</span>
+                                    <a href="mailto:vanapallisaisriram7@gmail.com" class="info-val">vanapallisaisriram7@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="info-icon flex-center">
+                                    <i data-lucide="phone"></i>
+                                </div>
+                                <div class="info-details">
+                                    <span class="info-label">Phone</span>
+                                    <a href="tel:+918309554288" class="info-val">+91-83095-54288</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="info-icon flex-center">
+                                    <i data-lucide="map-pin"></i>
+                                </div>
+                                <div class="info-details">
+                                    <span class="info-label">Location</span>
+                                    <span class="info-val">Kondapur, Hyderabad, TS, India</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form Card -->
+                    <div class="contact-form-card" data-glow>
+                        <form id="contact-form">
+                            <!-- Anti-CSRF Token -->
+                            <input type="hidden" name="csrf_token" id="csrf-token-field" value="STATIC_FRONTEND_SANDBOX_TOKEN">
+                            
+                            <div class="form-group">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" name="name" id="name" required class="form-input" placeholder="Your Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" name="email" id="email" required class="form-input" placeholder="you@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="form-label">Your Message</label>
+                                <textarea name="message" id="message" required class="form-input form-input--textarea" placeholder="How can I help you?"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--full">
+                                <span>Send Message</span>
+                                <i data-lucide="send"></i>
+                            </button>
+                            <div class="form-response-msg" id="form-feedback-area" style="margin-top: 15px; display: none; font-size: 0.9rem; text-align: center;"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Floating AI Assistant Chat Widget -->
+    <div class="ai-chat-widget animate-float" id="ai-chatbot">
+        <button class="ai-chat-trigger flex-center" id="chatbot-trigger" aria-label="Open AI Assistant Chat">
+            <i data-lucide="bot" class="bot-icon"></i>
+            <i data-lucide="x" class="close-icon" style="display: none;"></i>
+        </button>
+        
+        <div class="ai-chat-window" id="chatbot-window">
+            <div class="ai-chat-header">
+                <div class="ai-chat-avatar flex-center">
+                    <i data-lucide="bot"></i>
+                </div>
+                <div class="ai-chat-title-group">
+                    <h4 class="ai-chat-name">Sriram's AI Assistant</h4>
+                    <span class="ai-chat-status">
+                        <span class="status-dot"></span>
+                        <span>RAG Sandbox Active</span>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- Upgraded Chat/RAG Tab Selectors -->
+            <div class="ai-chat-header-tabs">
+                <button class="ai-chat-header-tab active" id="chatbot-tab-chat">💬 Chat</button>
+                <button class="ai-chat-header-tab" id="chatbot-tab-visualizer">📊 RAG Visualizer</button>
+            </div>
+
+            <!-- Standard Chat Body -->
+            <div class="ai-chat-body" id="chatbot-messages-body">
+                <div class="chat-msg chat-msg--assistant">
+                    <p>Hi, I am Sriram's portfolio assistant! Ask me anything about his cybersecurity experience at TCS, MERN e-commerce projects, or battery machine learning papers.</p>
+                </div>
+            </div>
+
+            <!-- Behind the Scenes RAG Visualizer Body -->
+            <div class="ai-chat-visualizer-panel" id="chatbot-visualizer-body">
+                <!-- RAG Vector Space Map -->
+                <div class="rag-canvas-card">
+                    <!-- Glassmorphic Controls -->
+                    <div class="rag-controls-panel" style="display: flex; gap: 15px; padding: 10px 12px; background: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.05); align-items: center; justify-content: space-between; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 8px; flex: 1; min-width: 130px;">
+                            <span style="font-size: 0.7rem; color: var(--text-muted); font-family: var(--font-mono); white-space: nowrap;">Similarity Cutoff:</span>
+                            <input type="range" min="0.10" max="0.95" step="0.05" value="0.45" id="rag-cutoff-slider" style="flex: 1; height: 4px; border-radius: 2px; cursor: pointer; accent-color: var(--accent);">
+                            <span id="rag-cutoff-val" style="font-size: 0.7rem; font-family: var(--font-mono); color: var(--accent); min-width: 25px; text-align: right;">0.45</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px; flex: 1; min-width: 110px;">
+                            <span style="font-size: 0.7rem; color: var(--text-muted); font-family: var(--font-mono); white-space: nowrap;">Retrieved K:</span>
+                            <input type="range" min="1" max="4" step="1" value="3" id="rag-k-slider" style="flex: 1; height: 4px; border-radius: 2px; cursor: pointer; accent-color: var(--primary);">
+                            <span id="rag-k-val" style="font-size: 0.7rem; font-family: var(--font-mono); color: var(--primary); min-width: 10px; text-align: right;">3</span>
+                        </div>
+                    </div>
+                    <div class="rag-canvas-header">
+                        <i data-lucide="network" style="width: 14px; height: 14px;"></i>
+                        <span>Dynamic 2D Vector Embedding Map</span>
+                    </div>
+                    <div class="rag-canvas-wrapper">
+                        <canvas id="rag-vector-canvas"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Matching metadata nodes -->
+                <div class="rag-meta-card">
+                    <h5 class="rag-meta-title">
+                        <i data-lucide="file-text" class="text-accent" style="width: 14px; height: 14px;"></i>
+                        <span>Retrieved Semantic Chunk Context</span>
+                    </h5>
+                    <div class="rag-chunk-text" id="rag-chunk-display">
+                        Ask a question to see the nearest neighbor vector chunk retrieved from Sriram's publication database in real-time.
+                    </div>
+                </div>
+
+                <div class="rag-meta-card">
+                    <h5 class="rag-meta-title">
+                        <i data-lucide="calculator" class="text-primary" style="width: 14px; height: 14px;"></i>
+                        <span>Similarity Metrics & Distance</span>
+                    </h5>
+                    <div class="rag-similarity-list" id="rag-similarity-list">
+                        <div class="rag-similarity-item">
+                            <span class="rag-similarity-name">EV CKKS FHE Paper (2026)</span>
+                            <span class="rag-similarity-score">Cos: 0.00</span>
+                        </div>
+                        <div class="rag-similarity-item">
+                            <span class="rag-similarity-name">EDL-DRVFLNN Paper (2025)</span>
+                            <span class="rag-similarity-score">Cos: 0.00</span>
+                        </div>
+                        <div class="rag-similarity-item">
+                            <span class="rag-similarity-name">TCS Security Analyst Resume</span>
+                            <span class="rag-similarity-score">Cos: 0.00</span>
+                        </div>
+                        <div class="rag-similarity-item">
+                            <span class="rag-similarity-name">Full-Stack E-Commerce</span>
+                            <span class="rag-similarity-score">Cos: 0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ai-chat-footer">
+                <input type="text" id="chatbot-input-field" placeholder="Ask about TCS, skills, publications..." autocomplete="off">
+                <button id="chatbot-send-btn" aria-label="Send message"><i data-lucide="send"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- RAG Vector Space slide-out drawer -->
+    <div id="rag-node-drawer" class="rag-drawer-overlay">
+        <div class="rag-drawer-content">
+            <button class="rag-drawer-close" id="rag-drawer-close-btn">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="fhe-title-badge" style="background: rgba(var(--primary-raw), 0.1); color: var(--primary); margin-bottom: 15px;">
+                <i data-lucide="database"></i>
+                <span>🧠 Vector Database Chunk Profile</span>
+            </div>
+            <h3 id="rag-drawer-title" class="fhe-subtitle" style="font-size: 1.2rem; margin-bottom: 12px; color: #ffffff;">TCS Resume Chunk</h3>
+            
+            <div style="margin-bottom: 20px;">
+                <h4 style="font-size: 0.8rem; font-weight: bold; color: var(--accent); margin-bottom: 6px; font-family: var(--font-mono);">RAW TEXT EXTRACT</h4>
+                <div id="rag-drawer-text" style="font-size: 0.85rem; line-height: 1.5; color: var(--text-light); background: rgba(0,0,0,0.25); padding: 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05); max-height: 200px; overflow-y: auto;">
+                    Led migration of legacy systems to MERN stack, developed automated CI/CD security scanning tools...
+                </div>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <h4 style="font-size: 0.8rem; font-weight: bold; color: var(--primary); margin-bottom: 6px; font-family: var(--font-mono);">VECTOR EMBEDDING (1536-D MOCK)</h4>
+                <div id="rag-drawer-embeddings" style="font-size: 0.7rem; font-family: var(--font-mono); line-height: 1.4; color: var(--text-muted); background: rgba(0,0,0,0.4); padding: 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05); max-height: 120px; overflow-y: auto; word-break: break-all;">
+                    [0.0125, -0.0482, 0.1983, 0.0024, -0.1039, 0.0543, 0.0024, -0.1039, 0.0543, 0.0024, -0.1039, 0.0543, 0.0024, -0.1039, 0.0543, 0.0024, -0.1039, 0.0543, ...]
+                </div>
+            </div>
+
+            <div>
+                <h4 style="font-size: 0.8rem; font-weight: bold; color: #10b981; margin-bottom: 6px; font-family: var(--font-mono);">SEMANTIC SIMILARITY COMPUTATION</h4>
+                <div id="rag-drawer-math" style="font-size: 0.75rem; font-family: var(--font-mono); background: rgba(0,0,0,0.25); padding: 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05);">
+                    <div>Similarity Formula:</div>
+                    <div style="margin: 8px 0; color: var(--text-muted);">cos(θ) = (A · B) / (||A|| ||B||)</div>
+                    <div style="display: flex; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px;">
+                        <span>Calculated Cosine Score:</span>
+                        <span id="rag-drawer-score-val" style="color: #10b981; font-weight: bold;">0.8932</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Transition falling Matrix code rain canvas overlay -->
+    <canvas id="theme-transition-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 99999; display: none;"></canvas>
+
+    <!-- CTF Badge Unlock Modal -->
+    <div class="ctf-modal flex-center" id="ctf-achievement-modal">
+        <div class="ctf-modal-card flex-center">
+            <div class="ctf-particles-emitter" id="particles-emitter"></div>
+            <div class="ctf-badge-glow"></div>
+            <div class="ctf-badge-ring flex-center">
+                <i data-lucide="shield-check" class="ctf-badge-icon"></i>
+            </div>
+            <h3 class="ctf-modal-title">SECURE CODING MASTER</h3>
+            <span class="ctf-badge-tag">Badge Unlocked</span>
+            <p class="ctf-modal-desc">Congratulations! You successfully exploited the buffer overflow vulnerability and submitted the local cryptographic flag.</p>
+            <button class="btn btn--primary" onclick="document.getElementById('ctf-achievement-modal').style.display='none';">Awesome</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-copy">&copy; 2026 Sai Sriram Vanapalli. Handcrafted securely.</p>
+            <div class="footer-meta">
+                <span class="meta-dot"></span>
+                <span>Workspace: <strong class="text-success">System Clean & SECURE</strong></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="/script.js"></script>
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
