@@ -2913,4 +2913,24 @@ a.info-val:hover {
     #terminal-sandbox {
         display: block !important;
     }
+
+    /* Optimize the Terminal layout for smaller screens */
+    .terminal-window {
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .terminal-console {
+        padding: 16px !important;
+        height: 320px !important;
+        font-size: 0.8rem !important;
+    }
+
+    .terminal-titlebar {
+        padding: 10px 14px !important;
+    }
+
+    .console-input-row {
+        gap: 4px !important;
+    }
 }
