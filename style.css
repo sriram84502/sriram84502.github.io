@@ -2892,3 +2892,25 @@ a.info-val:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 12px 40px rgba(var(--accent-raw), 0.15);
 }
+
+/* -------------------------------------------------------------
+   MOBILE OPTIMIZATION: ONLY KEEP TERMINAL CONSOLE & CTF
+   ------------------------------------------------------------- */
+@media (max-width: 992px) {
+    /* Hide the tab selector buttons since only one sandbox remains */
+    .playground-tabs-container {
+        display: none !important;
+    }
+
+    /* Hide the other three panels on mobile/tablets */
+    #fhe-sandbox,
+    #api-sandbox,
+    #tls-sandbox {
+        display: none !important;
+    }
+
+    /* Force the Terminal Sandbox panel to be active and visible */
+    #terminal-sandbox {
+        display: block !important;
+    }
+}
